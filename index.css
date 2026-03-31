@@ -56,35 +56,32 @@ nav {
     cursor: pointer;
 }
 
-/* ================== SEARCH BAR ================== */
 .search-container {
-    text-align: left;           /* aliniere la stanga */
-    margin: 80px 0 30px 20px;   /* distanta sus de navbar, jos, si stanga */
+    text-align: left;
+    margin: 80px 0 30px 20px;
 }
 
-/* INPUT */
 #searchInput {
     width: 250px;
     padding: 10px 15px;
     border-radius: 5px;
     border: none;
     outline: none;
-    background-color: #f0f0f0;  /* gri deschis */
+    background-color: #f0f0f0;
     font-size: 16px;
     transition: 0.3s;
 }
 
-/* Focus pe input */
+
 #searchInput:focus {
     background-color: #e0e0e0;
 }
 
-/* BUTON */
 button {
     padding: 10px 15px;
     border-radius: 5px;
     border: none;
-    background-color: #333;      /* ca navbar */
+    background-color: #333;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -95,11 +92,11 @@ button:hover {
     background-color: #ff6b6b;
 }
 
-/* Responsive mic de tot */
 @media (max-width: 500px) {
     #searchInput {
         width: 180px;
     }
+
     button {
         padding: 8px 12px;
     }
