@@ -35,3 +35,23 @@ nav {
 .menu a:hover {
     background-color: #ff6b6b;
 }
+
+.image-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.image-container img {
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+
+.image-container img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
