@@ -55,3 +55,49 @@ nav {
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.search-container {
+    text-align: left;
+    margin: 80px 0 30px 20px;
+}
+
+#searchInput {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+
+#searchInput:focus {
+    background-color: #e0e0e0;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff6b6b;
+}
+
+@media (max-width: 500px) {
+    #searchInput {
+        width: 180px;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+}
