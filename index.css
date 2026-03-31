@@ -35,3 +35,53 @@ nav {
 .menu a:hover {
     background-color: #ff6b6b;
 }
+
+/* CONTINERE SEARCH */
+/* ================== SEARCH BAR ================== */
+.search-container {
+    text-align: left;           /* aliniere la stanga */
+    margin: 30px 30px;   /* distanta sus de navbar, jos, si stanga */
+}
+
+/* INPUT */
+#searchInput {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;  /* gri deschis */
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Focus pe input */
+#searchInput:focus {
+    background-color: #e0e0e0;
+}
+
+/* BUTON */
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;      /* ca navbar */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff6b6b;
+}
+
+/* Responsive mic de tot */
+@media (max-width: 500px) {
+    #searchInput {
+        width: 180px;
+    }
+    button {
+        padding: 8px 12px;
+    }
+}
