@@ -168,3 +168,33 @@ nav {
   color: white;
   font-weight: bold;
 }
+
+/* 🔥 container mare pentru aliniere */
+.main-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* 🔥 grid pentru imaginile mici */
+.image-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 600px;
+}
+
+/* fiecare bloc imagine + text */
+.card {
+    text-align: center;
+}
+
+.image-container2 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sub-text {
+    margin-top: 5px;
+    font-weight: bold;
+}
