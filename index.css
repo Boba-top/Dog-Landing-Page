@@ -118,34 +118,53 @@ button:hover {
     border-radius: 10px;
 }
 
-/* 🔥 container mare pentru aliniere */
-.main-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
+body {
+    background-color: white;
+    color: black;
 }
 
-/* 🔥 grid pentru imaginile mici */
-.image-container2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    width: 600px;
+.dark-mode {
+    background-color: #121212;
+    color: white;
 }
 
-/* fiecare bloc imagine + text */
-.card {
-    text-align: center;
+.dark-mode nav {
+    background-color: #1e1e1e;
 }
 
-.image-container2 img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+.dark-mode a {
+    color: white;
 }
 
-.sub-text {
-    margin-top: 5px;
-    font-weight: bold;
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  z-index: 1;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+#theme-button {
+  margin-left: auto;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
