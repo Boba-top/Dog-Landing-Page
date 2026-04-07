@@ -110,3 +110,91 @@ button:hover {
     font-size: 30px;
     font-weight: bold;
 }
+
+.breed-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode nav {
+    background-color: #1e1e1e;
+}
+
+.dark-mode a {
+    color: white;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  z-index: 1;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+#theme-button {
+  margin-left: auto;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* 🔥 container mare pentru aliniere */
+.main-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* 🔥 grid pentru imaginile mici */
+.image-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 600px;
+}
+
+/* fiecare bloc imagine + text */
+.card {
+    text-align: center;
+}
+
+.image-container2 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sub-text {
+    margin-top: 5px;
+    font-weight: bold;
+}
