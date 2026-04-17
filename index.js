@@ -50,3 +50,29 @@ window.addEventListener("load", () => {
         themeBtn.textContent = "🌑";
     }
 });
+
+function showOnlyThis(card) {
+    // 1️⃣ Ascunde tot ce nu e navbar sau search bar
+    const allSections = document.body.querySelectorAll("body > *:not(nav):not(#searchInput):not(#theme-button)");
+    allSections.forEach(el => el.style.display = "none");
+
+    // 2️⃣ Creează container pentru card
+    const focusDiv = document.createElement("div");
+    focusDiv.style.display = "flex";
+    focusDiv.style.flexDirection = "column";
+    focusDiv.style.alignItems = "flex-start";   // fixează în stânga
+    focusDiv.style.margin = "20px 0 0 20px";    // sub search bar
+
+    // 3️⃣ Clonează card-ul
+    const clone = card.cloneNode(true);
+    clone.style.width = "250px";      // dimensiune fixă, rezonabilă
+    clone.style.transform = "scale(1)"; // fără mărire exagerată
+    clone.style.cursor = "pointer";
+
+    // 4️⃣ La click pe imagine → revine la vizualizare normală
+    clone.onclick = () => location.reload();
+
+    // 5️⃣ Adaugă card-ul în container
+    focusDiv.appendChild(clone);
+    document.body.appendChild(focusDiv);
+}
