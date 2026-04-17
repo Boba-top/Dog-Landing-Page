@@ -25,21 +25,16 @@ function searchDog() {
 }
 const themeBtn = document.getElementById("theme-button");
 
-// 🔹 la click → schimbă și salvează tema
 themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     const isDark = document.body.classList.contains("dark-mode");
 
-    // salvează tema
     localStorage.setItem("theme", isDark ? "dark" : "light");
 
-    // schimbă icon
     themeBtn.textContent = isDark ? "☀️" : "🌑";
 });
 
-
-// 🔹 la refresh → aplică tema salvată
 window.addEventListener("load", () => {
     const savedTheme = localStorage.getItem("theme");
 
