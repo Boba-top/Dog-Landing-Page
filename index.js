@@ -44,4 +44,21 @@ window.addEventListener("load", () => {
     } else {
         themeBtn.textContent = "🌑";
     }
+
+    getDogFact();
 });
+
+async function getDogFact() {
+    try {
+        const response = await fetch("https://dogapi.dog/api/v2/facts");
+        const data = await response.json();
+
+        const fact = data.data[0].attributes.body;
+
+        document.getElementById("dog-fact").textContent = fact;
+    } catch (error) {
+        document.getElementById("dog-fact").textContent = "Couldn't load dog fact 🐶";
+        console.log(error);
+    }
+}
+
