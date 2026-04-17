@@ -2,12 +2,16 @@ nav {
     background-color: #333;
     height: 60px;
     position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 .logo {
     position: absolute;
     left: 20px;
     top: 8px;
+    z-index: 1;
 }
 
 .logo-img {
@@ -17,11 +21,14 @@ nav {
 }
 
 .menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    gap: 20px;
+    gap: 30px;
 }
 
 .menu a {
@@ -29,6 +36,7 @@ nav {
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
@@ -36,35 +44,18 @@ nav {
     background-color: #ff6b6b;
 }
 
-.image-container {
-    margin-top: 10px;
-    display: flex;
-    justify-content: left;
-    gap: 10px;
-}
-
-.image-container img {
-    width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-
-.image-container img:hover {
-    transform: scale(1.1);
+#theme-button {
+    margin-left: auto;
+    font-size: 20px;
+    background: none;
+    border: none;
     cursor: pointer;
-}
-
-.search-container {
-    text-align: left;
-    margin: 80px 0 30px 20px;
 }
 
 #searchInput {
     width: 250px;
     padding: 10px 15px;
-    margin-top: 10px;
+    margin: 30px 0 30px 20px; /* sub navbar */
     border-radius: 5px;
     border: none;
     outline: none;
@@ -72,7 +63,6 @@ nav {
     font-size: 16px;
     transition: 0.3s;
 }
-
 
 #searchInput:focus {
     background-color: #e0e0e0;
@@ -103,21 +93,6 @@ button:hover {
     }
 }
 
-.hello-text {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 10px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.breed-image {
-    width: 300px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
 body {
     background-color: white;
     color: black;
@@ -136,47 +111,27 @@ body {
     color: white;
 }
 
-nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
+.hello-text {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.logo {
-  z-index: 1;
+.breed-image {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
-.menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 30px;
-}
-
-#theme-button {
-  margin-left: auto;
-  font-size: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-/* 🔥 container mare pentru aliniere */
 .main-section {
     display: flex;
     align-items: flex-start;
     gap: 30px;
 }
 
-/* 🔥 grid pentru imaginile mici */
 .image-container2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -184,14 +139,21 @@ nav {
     width: 600px;
 }
 
-/* fiecare bloc imagine + text */
 .card {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .image-container2 img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .sub-text {
@@ -199,14 +161,28 @@ nav {
     font-weight: bold;
 }
 
-#fun-fact-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    z-index: 1000;
+.focused-card img {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.image-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.image-container img {
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
