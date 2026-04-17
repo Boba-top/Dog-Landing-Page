@@ -186,3 +186,19 @@ body {
     transform: scale(1.1);
     cursor: pointer;
 }
+
+.overlay img:hover {
+    transform: none !important;
+}
+
+#fun-fact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}

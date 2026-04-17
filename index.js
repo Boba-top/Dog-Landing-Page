@@ -62,3 +62,26 @@ async function getDogFact() {
     }
 }
 
+function showOnlyThis(card) {
+    const mainSection = document.querySelector('.main-section');
+
+    // ascunde tot
+    mainSection.style.display = "none";
+
+    // clonează cardul apăsat
+    const clone = card.cloneNode(true);
+    clone.classList.add("fullscreen-card");
+
+    // creează container nou
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+
+    overlay.appendChild(clone);
+    document.body.appendChild(overlay);
+
+    // click ca să închizi
+    overlay.addEventListener("click", () => {
+        overlay.remove();
+        mainSection.style.display = "flex";
+    });
+}
