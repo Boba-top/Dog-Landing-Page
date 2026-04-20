@@ -64,24 +64,28 @@ async function getDogFact() {
 
 function showOnlyThis(card) {
     const mainSection = document.querySelector('.main-section');
+    const detail = document.getElementById('dog-detail');
 
-    // ascunde tot
+    // ascunde conținutul principal
     mainSection.style.display = "none";
 
-    // clonează cardul apăsat
-    const clone = card.cloneNode(true);
-    clone.classList.add("fullscreen-card");
+    // ia imaginea și numele
+    const imgSrc = card.querySelector("img").src;
+    const name = card.querySelector(".sub-text").textContent;
 
-    // creează container nou
-    const overlay = document.createElement("div");
-    overlay.classList.add("overlay");
+    // setează în secțiunea nouă
+    document.getElementById("dog-detail-img").src = imgSrc;
+    document.getElementById("dog-name").textContent = name;
 
-    overlay.appendChild(clone);
-    document.body.appendChild(overlay);
+    // descriere simplă (poți schimba)
+    document.getElementById("dog-description").textContent =
+        name + " is a very cute and friendly dog. Loves to play and be around people.";
 
-    // click ca să închizi
-    overlay.addEventListener("click", () => {
-        overlay.remove();
-        mainSection.style.display = "flex";
-    });
+    // afișează secțiunea
+    detail.classList.remove("hidden");
+}
+
+function goBack() {
+    document.querySelector('.main-section').style.display = "flex";
+    document.getElementById('dog-detail').classList.add("hidden");
 }
