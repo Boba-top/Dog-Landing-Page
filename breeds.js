@@ -83,3 +83,7 @@ select.innerHTML = `<option value="">-- Alege rasa --</option>`;
 breeds.forEach(breed => {
     select.innerHTML += `<option value="${breed}">${breed}</option>`;
 });
+
+function goHome() {
+    window.location.href = "index.html";
+}

@@ -32,3 +32,7 @@ function showPlace(place) {
     document.getElementById("mapFrame").src =
         "https://www.google.com/maps?q=" + place + "&output=embed";
 }
+
+function goHome() {
+    window.location.href = "index.html";
+}
