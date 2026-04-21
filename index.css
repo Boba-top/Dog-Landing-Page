@@ -238,3 +238,9 @@ body {
 .back-btn:hover {
     background-color: #ff6b6b;
 }
+#dog-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
