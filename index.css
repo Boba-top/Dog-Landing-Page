@@ -173,7 +173,7 @@ body {
 .image-container {
     margin-top: 10px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -237,4 +237,73 @@ body {
 
 .back-btn:hover {
     background-color: #ff6b6b;
+}
+#dog-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.search-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#searchInput {
+    width: 320px;
+    padding: 12px 18px;
+    border-radius: 30px;
+
+    border: 2px solid #ff6b6b;
+    outline: none;
+
+    background-color: white; /* IMPORTANT - solid */
+    color: #333;
+
+    font-size: 15px;
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+#searchInput::placeholder {
+    color: #888;
+}
+
+#searchInput:focus {
+    width: 360px;
+    border-color: #333;
+    box-shadow: 0 6px 18px rgba(255, 107, 107, 0.3);
+}
+#searchInput {
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 2px solid #ff6b6b;
+    outline: none;
+    background-color: white;
+}
+
+#searchInput,
+button[onclick="searchDog()"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body {
+    text-align: right;
+}
+
+button[onclick="searchDog()"] {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    margin-left: 8px;
 }
