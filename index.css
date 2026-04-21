@@ -173,7 +173,7 @@ body {
 .image-container {
     margin-top: 10px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 10px;
 }
 
