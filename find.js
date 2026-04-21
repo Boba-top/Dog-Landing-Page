@@ -15,7 +15,6 @@ const places = [
 
 const container = document.getElementById("placesContainer");
 
-// generează carduri automat
 places.forEach(place => {
     const card = document.createElement("div");
     card.classList.add("card");
