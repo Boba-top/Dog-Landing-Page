@@ -66,22 +66,17 @@ function showOnlyThis(card) {
     const mainSection = document.querySelector('.main-section');
     const detail = document.getElementById('dog-detail');
 
-    // ascunde conținutul principal
     mainSection.style.display = "none";
 
-    // ia imaginea și numele
     const imgSrc = card.querySelector("img").src;
     const name = card.querySelector(".sub-text").textContent;
 
-    // setează în secțiunea nouă
     document.getElementById("dog-detail-img").src = imgSrc;
     document.getElementById("dog-name").textContent = name;
 
-    // descriere simplă (poți schimba)
     document.getElementById("dog-description").textContent =
         name + " is a very cute and friendly dog. Loves to play and be around people.";
 
-    // afișează secțiunea
     detail.classList.remove("hidden");
 }
 
