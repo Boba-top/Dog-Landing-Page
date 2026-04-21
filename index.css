@@ -130,6 +130,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 30px;
+    margin-left: 65px;
 }
 
 .image-container2 {
@@ -137,6 +138,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     width: 600px;
+    margin-left: 85px;
 }
 
 .card {
@@ -178,13 +180,6 @@ body {
 .image-container img {
     width: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.image-container img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
 }
 
 .overlay img:hover {
@@ -199,6 +194,47 @@ body {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 7px;
     z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+#dog-detail {
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+}
+
+#dog-detail img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.dog-info {
+    max-width: 400px;
+}
+
+.dog-info h2 {
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 175px;
+    left: 47px;
+
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #ff6b6b;
 }
