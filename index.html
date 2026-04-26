@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <nav>
         <div class="logo">
             <img src="images/D logo.png" class="logo-img">
@@ -17,14 +18,19 @@
             <a href="breeds.html">Breeds</a>
             <a href="find.html">Find a Dog</a>
         </div>
+
         <button id="theme-button">🌑</button>
     </nav>
 
-    <input type="text" id="searchInput" placeholder="Scrie numele rasei...">
-    <button onclick="searchDog()">Search</button>
+    <!-- SEARCH BAR RIGHT -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Scrie numele rasei...">
+        <button onclick="searchDog()">Search</button>
+    </div>
 
     <div id="breed-section"></div>
 
+    <!-- MAIN HOME SECTION -->
     <div class="main-section">
 
         <div class="image-container">
@@ -35,6 +41,7 @@
         </div>
 
         <div class="image-container2">
+
             <div class="card" onclick="showOnlyThis(this)">
                 <img src="images/049407aa3d225b011002e7033694cfec.jpg">
                 <p class="sub-text">Biscuit</p>
@@ -64,30 +71,76 @@
                 <img src="images/38312056_8632583.jpg">
                 <p class="sub-text">Rufus</p>
             </div>
-        </div>
 
+        </div>
     </div>
 
+    <!-- DOG DETAIL SECTION -->
     <div id="dog-detail" class="hidden">
 
-        <button class="back-btn" onclick="goBack()">Back</button>
+        <!-- BACK BUTTON LEFT -->
+        <button class="back-btn" onclick="goBack()">⬅ Back to Home</button>
 
-        <img id="dog-detail-img" src="">
+        <div class="detail-container">
 
-        <div class="dog-info">
-            <h2 id="dog-name"></h2>
-            <p id="dog-description"></p>
+            <div class="detail-left">
+                <img id="dog-detail-img" src="">
+            </div>
+
+            <div class="detail-right">
+
+                <!-- MAIN INFO -->
+                <div class="info-box">
+                    <h3>Main Info</h3>
+                    <div class="info-row"><span>🐶</span><p id="dog-name"></p></div>
+                    <div class="info-row"><span>🐾</span><p id="dog-breed"></p></div>
+                    <div class="info-row"><span>📅</span><p id="dog-age"></p></div>
+                    <div class="info-row"><span>⚧</span><p id="dog-gender"></p></div>
+                </div>
+
+                <!-- PHYSICAL DETAILS -->
+                <div class="info-box">
+                    <h3>Physical Details</h3>
+                    <div class="info-row"><span>⚖️</span><p id="dog-weight"></p></div>
+                    <div class="info-row"><span>📏</span><p id="dog-height"></p></div>
+                    <div class="info-row"><span>🎨</span><p id="dog-color"></p></div>
+                    <div class="info-row"><span>📦</span><p id="dog-size"></p></div>
+                </div>
+
+                <!-- PERSONALITY -->
+                <div class="info-box">
+                    <h3>Personality</h3>
+                    <div class="info-row"><span>😊</span><p id="dog-personality1"></p></div>
+                    <div class="info-row"><span>⚡</span><p id="dog-personality2"></p></div>
+                    <div class="info-row"><span>🎾</span><p id="dog-personality3"></p></div>
+                    <div class="info-row"><span>🧠</span><p id="dog-personality4"></p></div>
+                </div>
+
+                <!-- OTHER -->
+                <div class="info-box">
+                    <h3>Other</h3>
+                    <div class="info-row"><span>📍</span><p id="dog-origin"></p></div>
+                    <div class="info-row"><span>❤️</span><p id="dog-other1"></p></div>
+                    <div class="info-row"><span>📌</span><p id="dog-other2"></p></div>
+                    <div class="info-row"><span>⭐</span><p id="dog-other3"></p></div>
+                </div>
+
+            </div>
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <p>Realizat de Șaptefrați Ion &amp; Jiglițchi Alan — Anul 2 DAW-241</p>
     </footer>
 
+    <!-- FUN FACT BAR -->
     <div id="fun-fact-bar">
         <p id="dog-fact">Loading fun fact...</p>
     </div>
+
+    <script src="index.js"></script>
+
 </body>
-<script src="index.js"></script>
 
 </html>
