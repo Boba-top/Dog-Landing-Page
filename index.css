@@ -303,7 +303,7 @@ button[onclick="searchDog()"] {
     display: flex;
     gap: 50px;
     align-items: center;
-    align-items: flex-start; /* IMPORTANT */
+    align-items: flex-start;
     margin-top: 60px; 
 }
 
@@ -354,4 +354,138 @@ button[onclick="searchDog()"] {
 
 #dog-detail.hidden {
     display: none !important;
+}
+
+/* ================= WISHLIST ICON ================= */
+
+.wishlist-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.wishlist-icon:hover {
+    transform: scale(1.1);
+}
+
+/* ================= WISHLIST SECTION ================= */
+
+.wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 700px;
+    margin: 40px auto;
+    justify-content: center;
+}
+
+.wishlist-card {
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.wishlist-card:hover {
+    transform: translateY(-5px);
+}
+
+.wishlist-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain; /* IMPORTANT */
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.wishlist-card img:hover {
+    transform: scale(1.05);
+}
+
+.wishlist-card p {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.wishlist-card img:hover {
+    transform: scale(1.05);
+}
+
+/* ================= SAVE BUTTON ================= */
+
+.wishlist-save-btn {
+    position: absolute;
+    top: 30px;
+    left: 170px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
+    display: none;
+    outline: none;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.wishlist-save-btn.saved {
+    background-color: #ff6b6b;
+}
+
+.wishlist-save-btn:hover {
+    background-color: #999;
+}
+
+.wishlist-save-btn.saved:hover {
+    background-color: #ff6b6b;
+}
+
+.wishlist-save-btn:focus,
+.wishlist-save-btn:active {
+    transform: none;
+    outline: none;
+}
+
+/* ================= WISHLIST BACK BUTTON ================= */
+
+#wishlist-section h2 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 32px;
+}
+
+#wishlist-section {
+    position: relative;
+}
+
+.wishlist-back-btn {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* ================= ONLY FIX (DO NOT AFFECT OTHER BUTTONS) ================= */
+
+.wishlist-save-btn {
+    outline: none;
+    box-shadow: none;
+}
+
+.wishlist-save-btn:focus,
+.wishlist-save-btn:active {
+    background-color: #ff6b6b;
+    transform: none;
+    outline: none;
 }

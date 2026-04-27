@@ -22,15 +22,15 @@
         <button id="theme-button">🌑</button>
     </nav>
 
-    <!-- SEARCH BAR RIGHT -->
     <div class="search-box">
         <input type="text" id="searchInput" placeholder="Scrie numele rasei...">
         <button onclick="searchDog()">Search</button>
+        <img src="images/wishlist.png" class="wishlist-icon" onclick="openWishlist()" alt="Wishlist">
     </div>
+
 
     <div id="breed-section"></div>
 
-    <!-- MAIN HOME SECTION -->
     <div class="main-section">
 
         <div class="image-container">
@@ -75,11 +75,17 @@
         </div>
     </div>
 
-    <!-- DOG DETAIL SECTION -->
+<div id="wishlist-section" class="hidden">
+    <button class="back-btn" onclick="goBackHome()">⬅ Back to Home</button>
+    <h2>My Wishlist</h2>
+    <div id="wishlist-container" class="wishlist-grid"></div>
+</div>
+
     <div id="dog-detail" class="hidden">
 
-        <!-- BACK BUTTON LEFT -->
-        <button class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+        <button class="wishlist-back-btn" onclick="goBackHome()">⬅ Back to Home</button>
+
+        <button class="wishlist-save-btn" onclick="saveCurrentDog()">❤️ Save to Wishlist</button>
 
         <div class="detail-container">
 
