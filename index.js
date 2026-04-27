@@ -1,3 +1,5 @@
+/* ================= SEARCH ================= */
+
 function searchDog() {
     const breedValue = document.getElementById("searchInput").value.toLowerCase().trim();
     const BREED_URL = "https://dog.ceo/api/breed/" + breedValue + "/images/random";
@@ -67,123 +69,28 @@ async function getDogFact() {
 /* ================= DOG DATA ================= */
 
 const dogData = {
-    Biscuit: {
-        breed: "Jack Russell Terrier",
-        age: "4 years",
-        gender: "Boy",
-        weight: "7 kg",
-        height: "30 cm",
-        color: "White, brown & black coat",
-        size: "Small-sized breed",
-        personality1: "Friendly & playful",
-        personality2: "Very energetic",
-        personality3: "Loves running & games",
-        personality4: "Highly intelligent",
-        origin: "England",
-        other1: "Loyal companion",
-        other2: "Needs daily exercise",
-        other3: "Excellent family dog"
-    },
+    Biscuit: { breed: "Jack Russell Terrier", age: "4 years", gender: "Boy", weight: "7 kg", height: "30 cm", color: "White, brown & black coat", size: "Small-sized breed", personality1: "Friendly & playful", personality2: "Very energetic", personality3: "Loves running & games", personality4: "Highly intelligent", origin: "England", other1: "Loyal companion", other2: "Needs daily exercise", other3: "Excellent family dog" },
 
-    Tuzic: {
-        breed: "Pug",
-        age: "3 years",
-        gender: "Boy",
-        weight: "8 kg",
-        height: "28 cm",
-        color: "Fawn coat with black face",
-        size: "Small-sized breed",
-        personality1: "Loving & charming",
-        personality2: "Moderate energy",
-        personality3: "Enjoys short play sessions",
-        personality4: "Clever but stubborn",
-        origin: "China",
-        other1: "Great with families",
-        other2: "Sensitive to heat",
-        other3: "Funny personality"
-    },
+    Tuzic: { breed: "Pug", age: "3 years", gender: "Boy", weight: "8 kg", height: "28 cm", color: "Fawn coat with black face", size: "Small-sized breed", personality1: "Loving & charming", personality2: "Moderate energy", personality3: "Enjoys short play sessions", personality4: "Clever but stubborn", origin: "China", other1: "Great with families", other2: "Sensitive to heat", other3: "Funny personality" },
 
-    Bruno: {
-        breed: "Pug Puppy",
-        age: "1 year",
-        gender: "Boy",
-        weight: "4 kg",
-        height: "20 cm",
-        color: "Fawn coat",
-        size: "Toy-sized breed",
-        personality1: "Cute & affectionate",
-        personality2: "Playful puppy energy",
-        personality3: "Loves toys",
-        personality4: "Quick learner",
-        origin: "China",
-        other1: "Very social",
-        other2: "Needs gentle care",
-        other3: "Adorable companion"
-    },
+    Bruno: { breed: "Pug Puppy", age: "1 year", gender: "Boy", weight: "4 kg", height: "20 cm", color: "Fawn coat", size: "Toy-sized breed", personality1: "Cute & affectionate", personality2: "Playful puppy energy", personality3: "Loves toys", personality4: "Quick learner", origin: "China", other1: "Very social", other2: "Needs gentle care", other3: "Adorable companion" },
 
-    Rex: {
-        breed: "Beagle",
-        age: "5 years",
-        gender: "Boy",
-        weight: "12 kg",
-        height: "38 cm",
-        color: "Brown, white & black coat",
-        size: "Medium-small breed",
-        personality1: "Happy & outgoing",
-        personality2: "High energy",
-        personality3: "Loves outdoor adventures",
-        personality4: "Curious & smart",
-        origin: "England",
-        other1: "Good with children",
-        other2: "Strong sense of smell",
-        other3: "Great hunting dog"
-    },
+    Rex: { breed: "Beagle", age: "5 years", gender: "Boy", weight: "12 kg", height: "38 cm", color: "Brown, white & black coat", size: "Medium-small breed", personality1: "Happy & outgoing", personality2: "High energy", personality3: "Loves outdoor adventures", personality4: "Curious & smart", origin: "England", other1: "Good with children", other2: "Strong sense of smell", other3: "Great hunting dog" },
 
-    Dexter: {
-        breed: "Siberian Husky",
-        age: "2 years",
-        gender: "Boy",
-        weight: "22 kg",
-        height: "55 cm",
-        color: "Gray, white & black coat",
-        size: "Medium-sized breed",
-        personality1: "Friendly & gentle",
-        personality2: "Extremely energetic",
-        personality3: "Loves exercise",
-        personality4: "Independent thinker",
-        origin: "Siberia",
-        other1: "Pack-oriented",
-        other2: "Needs lots of activity",
-        other3: "Beautiful appearance"
-    },
+    Dexter: { breed: "Siberian Husky", age: "2 years", gender: "Boy", weight: "22 kg", height: "55 cm", color: "Gray, white & black coat", size: "Medium-sized breed", personality1: "Friendly & gentle", personality2: "Extremely energetic", personality3: "Loves exercise", personality4: "Independent thinker", origin: "Siberia", other1: "Pack-oriented", other2: "Needs lots of activity", other3: "Beautiful appearance" },
 
-    Rufus: {
-        breed: "Terrier Mix",
-        age: "3 years",
-        gender: "Boy",
-        weight: "6 kg",
-        height: "27 cm",
-        color: "Light tan coat",
-        size: "Small breed",
-        personality1: "Cheerful & affectionate",
-        personality2: "Moderate energy",
-        personality3: "Enjoys playtime",
-        personality4: "Alert & smart",
-        origin: "Mixed breed",
-        other1: "Loyal pet",
-        other2: "Easy to adapt",
-        other3: "Great lap dog"
-    }
+    Rufus: { breed: "Terrier Mix", age: "3 years", gender: "Boy", weight: "6 kg", height: "27 cm", color: "Light tan coat", size: "Small breed", personality1: "Cheerful & affectionate", personality2: "Moderate energy", personality3: "Enjoys playtime", personality4: "Alert & smart", origin: "Mixed breed", other1: "Loyal pet", other2: "Easy to adapt", other3: "Great lap dog" }
 };
 
 /* ================= SHOW DOG ================= */
 
-function showOnlyThis(card) {
-    const mainSection = document.querySelector('.main-section');
-    const detail = document.getElementById('dog-detail');
+let currentDog = null;
 
+function showOnlyThis(card) {
     const name = card.querySelector(".sub-text").textContent;
     const dog = dogData[name];
+
+    currentDog = name;
 
     document.getElementById("dog-detail-img").src = card.querySelector("img").src;
 
@@ -207,13 +114,93 @@ function showOnlyThis(card) {
     document.getElementById("dog-other2").textContent = dog.other2;
     document.getElementById("dog-other3").textContent = dog.other3;
 
-    mainSection.style.display = "none";
-    detail.classList.remove("hidden");
+    document.querySelector('.main-section').style.display = "none";
+    document.getElementById('dog-detail').classList.remove("hidden");
+
+    const wishlistBtn = document.querySelector('.wishlist-save-btn');
+wishlistBtn.style.display = "block";
+
+const exists = wishlist.some(dog => dog.name === currentDog);
+
+if (exists) {
+    wishlistBtn.classList.add("saved");
+} else {
+    wishlistBtn.classList.remove("saved");
+}
 }
 
 /* ================= BACK ================= */
 
 function goBack() {
     document.querySelector('.main-section').style.display = "flex";
+    document.getElementById('dog-detail').classList.add("hidden");
+    document.querySelector('.wishlist-save-btn').style.display = "none";
+}
+
+/* ================= WISHLIST ================= */
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+function saveCurrentDog() {
+    if (!currentDog) return;
+
+    const dogObj = {
+        name: currentDog,
+        img: document.getElementById("dog-detail-img").src
+    };
+
+    const exists = wishlist.some(dog => dog.name === currentDog);
+
+    if (!exists) {
+        wishlist.push(dogObj);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert(currentDog + " added to wishlist!");
+
+        document.querySelector('.wishlist-save-btn').classList.add("saved");
+    }
+}
+
+function openWishlist() {
+    document.querySelector('.main-section').style.display = "none";
+    document.getElementById('dog-detail').classList.add("hidden");
+
+    const section = document.getElementById('wishlist-section');
+    const container = document.getElementById('wishlist-container');
+
+    container.innerHTML = "";
+
+    if (wishlist.length === 0) {
+        container.innerHTML = "<p>No dogs saved yet.</p>";
+    }
+
+    wishlist.forEach(dog => {
+        const div = document.createElement('div');
+        div.className = "wishlist-card";
+        div.innerHTML = `
+            <img src="${dog.img}">
+            <p>${dog.name}</p>
+        `;
+
+        div.onclick = () => openDogFromWishlist(dog.name);
+        container.appendChild(div);
+    });
+
+    section.classList.remove("hidden");
+}
+
+function openDogFromWishlist(name) {
+    const card = [...document.querySelectorAll('.card')].find(c =>
+        c.querySelector('.sub-text').textContent === name
+    );
+
+    if (card) {
+        document.getElementById('wishlist-section').classList.add("hidden");
+        showOnlyThis(card);
+    }
+}
+
+function goBackHome() {
+    document.querySelector('.main-section').style.display = "flex";
+    document.getElementById('wishlist-section').classList.add("hidden");
     document.getElementById('dog-detail').classList.add("hidden");
 }
